@@ -1,5 +1,6 @@
 import telebot
 import time
+import string
 
 # Создание объекта бота
 bot = telebot.TeleBot("API_TOKEN")
@@ -24,7 +25,7 @@ def echo_all(message):
     user_id = message.from_user.id
     chat_id = message.chat.id
     user = message.from_user.username
-    message_text = message.text.lower()
+    message_text = message.text.lower().translate(str.maketrans("", "", string.punctuation))
     message_time = time.time()
     messages.setdefault(user_id, []).append((message_text, message_time))
     messages[user_id] = [(m, t) for (m, t) in messages[user_id] if time.time() - t < 60]
