@@ -3,7 +3,7 @@ import time
 import string
 
 # Создание объекта бота
-bot = telebot.TeleBot("6106244196:AAH7abNC05562iga8Hf0nT4lcUBo3qddJpI")
+bot = telebot.TeleBot("API_TOKEN")
 
 # Создание словаря для хранения сообщений
 messages = {}
